@@ -7,7 +7,7 @@ interface FeatureCardProps {
   title: string;
   subtitle: string;
   description: string;
-  icon: React.ReactNode;
+  graphic: React.ReactNode;
   delay?: number;
 }
 
@@ -15,7 +15,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   title,
   subtitle,
   description,
-  icon,
+  graphic,
   delay = 0,
 }) => {
   return (
@@ -23,7 +23,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       className="bg-autojam-card dark:bg-autojam-card-dark rounded-xl p-8 flex flex-col h-full card-hover animate-scale-in shadow-[0_10px_30px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5)]"
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className="mb-6">{icon}</div>
+      <div className="mb-6">{graphic}</div>
       <h3 className="text-xl font-bold mb-2 dark:text-white">{title}</h3>
       <p className="text-sm font-medium text-autojam-text-secondary dark:text-autojam-text-secondary-dark mb-4">
         {subtitle}
