@@ -120,6 +120,14 @@ export default {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.7" },
         },
+        aurora: {
+          from: {
+            backgroundPosition: "50% 50%, 50% 50%",
+          },
+          to: {
+            backgroundPosition: "350% 50%, 350% 50%",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -130,6 +138,7 @@ export default {
         "blur-in": "blur-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         float: "float 6s ease-in-out infinite",
         pulse: "pulse 4s ease-in-out infinite",
+        aurora: "aurora 60s linear infinite",
       },
       boxShadow: {
         subtle: "0 2px 10px rgba(0, 0, 0, 0.05)",
