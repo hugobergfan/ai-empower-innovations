@@ -38,7 +38,7 @@ const HeroSection = () => {
             <div className="flex flex-col items-center space-y-4 animate-fade-in" style={{
             animationDelay: "400ms"
           }}>
-              <p className="text-sm text-white/70">join the future:</p>
+              <p className="text-white/70 text-sm font-semibold">join the future:</p>
               <button className="flex items-center justify-center px-6 py-3 text-black rounded-lg font-medium transition-all duration-300 group hover:shadow-lg bg-zinc-50">
                 <span>Contact us</span>
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
