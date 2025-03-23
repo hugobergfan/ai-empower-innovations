@@ -81,7 +81,7 @@ const Navbar = () => {
                 <span className="text-sm font-medium">Menu</span>
                 <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56 bg-white shadow-lg rounded-lg">
+              <DropdownMenuContent align="end" className="w-56 bg-white/80 backdrop-blur-lg shadow-lg rounded-lg border border-white/20">
                 <DropdownMenuItem>
                   <a href="#" className="w-full">Products</a>
                 </DropdownMenuItem>
@@ -123,7 +123,7 @@ const Navbar = () => {
         {/* Mobile menu */}
         <div
           className={cn(
-            "fixed inset-0 z-40 bg-white pt-24 px-6 transition-all duration-500 ease-in-out transform md:hidden",
+            "fixed inset-0 z-40 bg-white/90 backdrop-blur-lg pt-24 px-6 transition-all duration-500 ease-in-out transform md:hidden",
             isOpen ? "translate-y-0" : "-translate-y-full"
           )}
         >
