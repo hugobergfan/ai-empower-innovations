@@ -12,6 +12,7 @@ import {
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [overHeroSection, setOverHeroSection] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,9 +21,19 @@ const Navbar = () => {
       } else {
         setScrolled(false);
       }
+
+      // Check if we're over the hero section
+      const heroSection = document.getElementById("hero-section");
+      if (heroSection) {
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+        setOverHeroSection(heroBottom > 0);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
+    // Initial check
+    handleScroll();
+    
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -35,7 +46,9 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-white/90 shadow-subtle backdrop-blur-md py-3"
+          ? overHeroSection 
+            ? "bg-black/90 shadow-subtle backdrop-blur-md py-3" 
+            : "bg-white/90 shadow-subtle backdrop-blur-md py-3"
           : "bg-transparent py-5"
       )}
     >
@@ -44,18 +57,27 @@ const Navbar = () => {
           {/* Logo */}
           <a
             href="/"
-            className="text-xl font-semibold flex items-center space-x-2 group"
+            className={cn(
+              "text-xl font-semibold flex items-center space-x-2 group",
+              overHeroSection ? "text-white" : "text-black"
+            )}
           >
             <span className="text-2xl font-bold tracking-tight relative">
               <span className="relative z-10">AutoJam.ai</span>
-              <span className="absolute -bottom-1 left-0 w-0 group-hover:w-full h-1 bg-black/10 transition-all duration-300 rounded"></span>
+              <span className={cn(
+                "absolute -bottom-1 left-0 w-0 group-hover:w-full h-1 transition-all duration-300 rounded",
+                overHeroSection ? "bg-white/20" : "bg-black/10"
+              )}></span>
             </span>
           </a>
 
           {/* Desktop Dropdown Menu */}
           <div className="hidden md:block">
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-1.5 text-black focus:outline-none">
+              <DropdownMenuTrigger className={cn(
+                "flex items-center space-x-1.5 focus:outline-none",
+                overHeroSection ? "text-white" : "text-black"
+              )}>
                 <span className="text-sm font-medium">Menu</span>
                 <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
@@ -76,7 +98,10 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden flex items-center space-x-1.5 text-black focus:outline-none"
+            className={cn(
+              "md:hidden flex items-center space-x-1.5 focus:outline-none",
+              overHeroSection ? "text-white" : "text-black"
+            )}
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
             <span className="text-sm font-medium">Menu</span>

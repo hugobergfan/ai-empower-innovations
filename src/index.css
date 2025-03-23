@@ -110,6 +110,10 @@
     @apply inline-flex items-center justify-center rounded-lg bg-black text-white px-5 py-3 text-base font-medium transition-all duration-300 shadow-button hover:shadow-button-hover transform hover:-translate-y-0.5;
   }
   
+  .button-hero-dark {
+    @apply inline-flex items-center justify-center rounded-lg bg-white text-black px-5 py-3 text-base font-medium transition-all duration-300 shadow-button hover:shadow-button-hover transform hover:-translate-y-0.5;
+  }
+  
   .button-secondary {
     @apply inline-flex items-center justify-center rounded-lg bg-white text-black px-5 py-3 text-base font-medium border border-gray-200 transition-all duration-300 shadow-button hover:shadow-button-hover transform hover:-translate-y-0.5;
   }
