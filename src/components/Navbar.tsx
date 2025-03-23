@@ -1,7 +1,13 @@
 
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,10 +52,31 @@ const Navbar = () => {
             </span>
           </a>
 
+          {/* Desktop Dropdown Menu */}
+          <div className="hidden md:block">
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-1.5 text-black focus:outline-none">
+                <span className="text-sm font-medium">Menu</span>
+                <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56 bg-white shadow-lg rounded-lg">
+                <DropdownMenuItem>
+                  <a href="#" className="w-full">Products</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <a href="#" className="w-full">About</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <a href="#" className="w-full">Contact</a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+
           {/* Mobile menu button */}
           <button
             onClick={toggleMenu}
-            className="flex items-center space-x-1.5 text-black focus:outline-none"
+            className="md:hidden flex items-center space-x-1.5 text-black focus:outline-none"
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
             <span className="text-sm font-medium">Menu</span>
@@ -71,7 +98,7 @@ const Navbar = () => {
         {/* Mobile menu */}
         <div
           className={cn(
-            "fixed inset-0 z-40 bg-white pt-24 px-6 transition-all duration-500 ease-in-out transform",
+            "fixed inset-0 z-40 bg-white pt-24 px-6 transition-all duration-500 ease-in-out transform md:hidden",
             isOpen ? "translate-y-0" : "-translate-y-full"
           )}
         >

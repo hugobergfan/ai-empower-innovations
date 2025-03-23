@@ -37,7 +37,7 @@ const HeroSection = () => {
       <div className="container-custom text-center px-6 sm:px-8 lg:px-12">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-6 animate-fade-in">
-            Empower your business with AI
+            Empower your business with <span className="font-serif italic">Artificial Intelligence</span>
           </h1>
           <p className="text-lg sm:text-xl text-autojam-text-secondary max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in" style={{ animationDelay: "200ms" }}>
             We build innovative AI applications tailored for your business. Our ground-breaking tech opens unlimited potential across a range of operations.

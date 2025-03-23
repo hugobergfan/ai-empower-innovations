@@ -75,6 +75,7 @@ export default {
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
+        serif: ["Libre Baskerville", "FreeSerif", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
