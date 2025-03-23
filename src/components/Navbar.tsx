@@ -62,6 +62,14 @@ const Navbar = () => {
               overHeroSection ? "text-white" : "text-black"
             )}
           >
+            <img 
+              src="/lovable-uploads/4dc1ac78-e3b0-4dfe-bfaf-6728975a96b4.png" 
+              alt="AutoJam Logo" 
+              className={cn(
+                "h-8 w-auto transition-opacity",
+                overHeroSection ? "invert" : ""
+              )} 
+            />
             <span className="text-2xl font-bold tracking-tight relative">
               <span className="relative z-10">AutoJam.ai</span>
               <span className={cn(

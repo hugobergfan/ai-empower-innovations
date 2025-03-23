@@ -7,8 +7,13 @@ const Footer = () => {
       <div className="container-custom">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="mb-6 md:mb-0">
-            <a href="/" className="text-2xl font-bold">
-              AutoJam.ai
+            <a href="/" className="flex items-center space-x-2">
+              <img 
+                src="/lovable-uploads/4dc1ac78-e3b0-4dfe-bfaf-6728975a96b4.png" 
+                alt="AutoJam Logo" 
+                className="h-8 w-auto" 
+              />
+              <span className="text-2xl font-bold">AutoJam.ai</span>
             </a>
           </div>
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 items-center">
