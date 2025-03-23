@@ -21,7 +21,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 }) => {
   return (
     <div className="relative min-h-[14rem] list-none">
-      <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-gray-700 p-2 md:rounded-[1.5rem] md:p-3">
+      <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-gray-700 bg-gray-900 p-2 md:rounded-[1.5rem] md:p-3">
         <GlowingEffect
           spread={40}
           glow={true}
@@ -44,7 +44,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
               <p className="text-autojam-text-secondary-dark mb-8 flex-grow">{description}</p>
             </div>
           </div>
-          <div className="flex justify-start">
+          <div className="flex justify-start mt-4">
             <button className={cn("inline-flex items-center text-sm font-medium group px-4 py-2 rounded-lg bg-[#FAE5D1] text-black hover:shadow-md transition-all duration-300 w-auto")}>
               <span>Read more</span>
               <ArrowRight
