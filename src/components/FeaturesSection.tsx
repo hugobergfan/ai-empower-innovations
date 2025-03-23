@@ -39,7 +39,7 @@ const FeaturesSection = () => {
                 </div>
                 <div className="text-white text-xs ml-2">AI Agent</div>
               </div>
-              <div className="from-slate-800 to-slate-900 p-3 bg-[autojam-card-dark] bg-neutral-800">
+              <div className="from-slate-800 to-slate-900 p-3 bg-[autojam-background-dark] bg-slate-900">
                 <div className="flex space-x-3 mb-3">
                   <div className="w-10 h-10 rounded-full bg-blue-400/20 flex items-center justify-center">
                     <div className="w-6 h-6 rounded-full bg-blue-500/60 animate-pulse flex items-center justify-center">
