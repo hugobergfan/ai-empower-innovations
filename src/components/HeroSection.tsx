@@ -1,9 +1,6 @@
-
 import React, { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
-import { TextShimmer } from "@/components/ui/text-shimmer";
-
 const HeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -30,15 +27,8 @@ const HeroSection = () => {
       <AuroraBackground className="p-0 bg-black dark:bg-black">
         <div className="container-custom text-center px-6 sm:px-8 lg:px-12 flex items-center justify-center min-h-screen pt-20">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl tracking-tight leading-tight mb-6 md:text-6xl">
-              <TextShimmer 
-                as="span"
-                className="font-medium text-neutral-50 [--base-color:theme(colors.white)] [--base-gradient-color:theme(colors.blue.300)] dark:[--base-color:theme(colors.white)] dark:[--base-gradient-color:theme(colors.blue.200)]"
-                duration={3}
-              >
-                Empower your business with 
-              </TextShimmer>
-              <span className="font-serif italic block mt-2">Artificial Intelligence</span>
+            <h1 className="text-4xl sm:text-5xl tracking-tight leading-tight mb-6 animate-fade-in bg-gradient-to-b from-white to-white/80 bg-clip-text font-medium text-neutral-50 md:text-6xl">
+              Empower your business with <span className="font-serif italic">Artificial Intelligence</span>
             </h1>
             <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in" style={{
             animationDelay: "200ms"
