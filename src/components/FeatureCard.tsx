@@ -20,15 +20,15 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 }) => {
   return (
     <div
-      className="bg-autojam-card dark:bg-autojam-card-dark rounded-xl p-8 flex flex-col h-full card-hover animate-scale-in shadow-[0_10px_30px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5)]"
+      className="bg-autojam-card dark:bg-autojam-card-dark rounded-xl p-6 flex flex-col h-full card-hover animate-scale-in shadow-[0_10px_30px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5)]"
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className="mb-6 -mx-4">{graphic}</div>
+      <div className="mb-5 -mx-2">{graphic}</div>
       <h3 className="text-xl font-bold mb-2 dark:text-white">{title}</h3>
-      <p className="text-sm font-medium text-autojam-text-secondary dark:text-autojam-text-secondary-dark mb-4">
+      <p className="text-sm font-medium text-autojam-text-secondary dark:text-autojam-text-secondary-dark mb-3">
         {subtitle}
       </p>
-      <p className="text-autojam-text-secondary dark:text-autojam-text-secondary-dark mb-8 flex-grow">{description}</p>
+      <p className="text-autojam-text-secondary dark:text-autojam-text-secondary-dark mb-6 flex-grow">{description}</p>
       <div className="flex justify-start">
         <button className={cn("inline-flex items-center text-sm font-medium group px-4 py-2 rounded-lg bg-[#FAE5D1] text-black hover:shadow-md transition-all duration-300")}>
           <span>Read more</span>
