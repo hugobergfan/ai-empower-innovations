@@ -1,42 +1,33 @@
-
 import React, { useEffect, useRef } from "react";
 import FeatureCard from "./FeatureCard";
 import ScrollReveal from "./ScrollReveal";
-
 const FeaturesSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("revealed");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
-
-  const features = [
-    {
-      title: "AI Agents",
-      subtitle: "Autonomous agent making decisions and taking action on your behalf",
-      description: "The most powerful form of AI. Our agents connect to your platforms and databases, allowing them to make autonomous decisions and take actions unprompted. For example our agents can read, analyse and reply to emails and autonomously schedule meetings, create tickets, delegate work and take action. Your 24/7 employee.",
-      graphic: (
-        <div className="relative">
+  const features = [{
+    title: "AI Agents",
+    subtitle: "Autonomous agent making decisions and taking action on your behalf",
+    description: "The most powerful form of AI. Our agents connect to your platforms and databases, allowing them to make autonomous decisions and take actions unprompted. For example our agents can read, analyse and reply to emails and autonomously schedule meetings, create tickets, delegate work and take action. Your 24/7 employee.",
+    graphic: <div className="relative">
           <div className="absolute -z-10 inset-0 bg-gradient-to-tr from-blue-100 to-purple-100 rounded-full blur-3xl opacity-60"></div>
           <div className="relative z-10 p-4">
             <div className="bg-white/10 backdrop-blur-md shadow-xl rounded-2xl overflow-hidden border border-white/20">
@@ -48,7 +39,7 @@ const FeaturesSection = () => {
                 </div>
                 <div className="text-white text-xs ml-2">AI Agent</div>
               </div>
-              <div className="bg-gradient-to-br from-slate-800 to-slate-900 p-3">
+              <div className="from-slate-800 to-slate-900 p-3 bg-[autojam-card-dark] bg-neutral-800">
                 <div className="flex space-x-3 mb-3">
                   <div className="w-10 h-10 rounded-full bg-blue-400/20 flex items-center justify-center">
                     <div className="w-6 h-6 rounded-full bg-blue-500/60 animate-pulse flex items-center justify-center">
@@ -82,14 +73,11 @@ const FeaturesSection = () => {
             </div>
           </div>
         </div>
-      ),
-    },
-    {
-      title: "Automated Workflows",
-      subtitle: "AI-powered backend handling data processes and workflows",
-      description: "Automate your manual processes with AI powered automations. Decide a trigger and result e.g. when a new customer is added, update CRM, send an email and draft an invoice. AI enables automating workflows without predetermined variables, allowing anything to be automated.",
-      graphic: (
-        <div className="relative">
+  }, {
+    title: "Automated Workflows",
+    subtitle: "AI-powered backend handling data processes and workflows",
+    description: "Automate your manual processes with AI powered automations. Decide a trigger and result e.g. when a new customer is added, update CRM, send an email and draft an invoice. AI enables automating workflows without predetermined variables, allowing anything to be automated.",
+    graphic: <div className="relative">
           <div className="absolute -z-10 inset-0 bg-gradient-to-tr from-green-100 to-teal-100 rounded-full blur-3xl opacity-60"></div>
           <div className="relative z-10 p-4">
             <div className="bg-white/10 backdrop-blur-md shadow-xl rounded-2xl overflow-hidden border border-white/20">
@@ -156,14 +144,11 @@ const FeaturesSection = () => {
             </div>
           </div>
         </div>
-      ),
-    },
-    {
-      title: "Internal Knowledge Chat-bots",
-      subtitle: "Chat-bot that answers question from your docs, ensuring accuracy",
-      description: "Train your own chatbot on internal documentation and domain specific knowledge. Our chat-bots answers based on real facts and documentation, with referrals to the sources, eliminating hallucinations and creating trustworthy replies.",
-      graphic: (
-        <div className="relative">
+  }, {
+    title: "Internal Knowledge Chat-bots",
+    subtitle: "Chat-bot that answers question from your docs, ensuring accuracy",
+    description: "Train your own chatbot on internal documentation and domain specific knowledge. Our chat-bots answers based on real facts and documentation, with referrals to the sources, eliminating hallucinations and creating trustworthy replies.",
+    graphic: <div className="relative">
           <div className="absolute -z-10 inset-0 bg-gradient-to-tr from-amber-100 to-rose-100 rounded-full blur-3xl opacity-60"></div>
           <div className="relative z-10 p-4">
             <div className="bg-white/10 backdrop-blur-md shadow-xl rounded-2xl overflow-hidden border border-white/20">
@@ -209,29 +194,14 @@ const FeaturesSection = () => {
             </div>
           </div>
         </div>
-      ),
-    },
-  ];
-
-  return (
-    <section ref={sectionRef} className="section-spacing reveal-animation bg-autojam-background dark:bg-autojam-background-dark">
+  }];
+  return <section ref={sectionRef} className="section-spacing reveal-animation bg-autojam-background dark:bg-autojam-background-dark">
       <div className="container-custom">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 reveal-animation">Solutions</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <FeatureCard
-              key={feature.title}
-              title={feature.title}
-              subtitle={feature.subtitle}
-              description={feature.description}
-              graphic={feature.graphic}
-              delay={index * 100}
-            />
-          ))}
+          {features.map((feature, index) => <FeatureCard key={feature.title} title={feature.title} subtitle={feature.subtitle} description={feature.description} graphic={feature.graphic} delay={index * 100} />)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default FeaturesSection;
