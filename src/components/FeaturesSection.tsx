@@ -1,11 +1,8 @@
-
 import React, { useEffect, useRef } from "react";
 import FeatureCard from "./FeatureCard";
 import ScrollReveal from "./ScrollReveal";
-
 const FeaturesSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -26,7 +23,6 @@ const FeaturesSection = () => {
       }
     };
   }, []);
-
   const features = [{
     title: "AI Agents",
     subtitle: "Autonomous agent making decisions and taking action on your behalf",
@@ -43,7 +39,7 @@ const FeaturesSection = () => {
                 </div>
                 <div className="text-white text-xs ml-2">AI Agent</div>
               </div>
-              <div className="from-slate-800 to-slate-900 p-3 bg-[autojam-background-dark] bg-slate-900">
+              <div className="from-slate-800 to-slate-900 p-3 bg-slate-800 bg-[autojam-background-dark]">
                 <div className="flex space-x-3 mb-3">
                   <div className="w-10 h-10 rounded-full bg-blue-400/20 flex items-center justify-center">
                     <div className="w-6 h-6 rounded-full bg-blue-500/60 animate-pulse flex items-center justify-center">
@@ -199,7 +195,6 @@ const FeaturesSection = () => {
           </div>
         </div>
   }];
-
   return <section ref={sectionRef} className="section-spacing reveal-animation bg-autojam-background dark:bg-autojam-background-dark">
       <div className="container-custom">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 reveal-animation">Solutions</h2>
@@ -209,5 +204,4 @@ const FeaturesSection = () => {
       </div>
     </section>;
 };
-
 export default FeaturesSection;
