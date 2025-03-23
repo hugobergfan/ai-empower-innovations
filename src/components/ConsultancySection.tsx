@@ -72,7 +72,7 @@ const ConsultancySection = () => {
                       <div className="w-3 h-3 rounded-full bg-green-500"></div>
                     </div>
                   </div>
-                  <div className="bg-zinc-800 text-white p-6 font-mono">
+                  <div className="text-white p-6 font-mono bg-slate-900">
                     <ScrollReveal threshold={0.2} delay={400}>
                       <div className="space-y-3">
                         <p className="text-green-400">→ Running AI business analysis...</p>
