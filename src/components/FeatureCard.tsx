@@ -21,7 +21,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 }) => {
   return (
     <div className="relative min-h-[14rem] list-none">
-      <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
+      <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-gray-700 p-2 md:rounded-[1.5rem] md:p-3">
         <GlowingEffect
           spread={40}
           glow={true}
@@ -31,7 +31,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           borderWidth={3}
         />
         <div
-          className="relative flex h-full flex-col justify-between overflow-hidden rounded-xl border-[0.75px] bg-autojam-card-dark p-6 shadow-sm animate-scale-in"
+          className="relative flex h-full flex-col justify-between overflow-hidden rounded-xl border-[0.75px] border-gray-800 bg-black p-6 shadow-sm animate-scale-in"
           style={{ animationDelay: `${delay}ms` }}
         >
           <div className="relative flex flex-1 flex-col justify-between gap-3">

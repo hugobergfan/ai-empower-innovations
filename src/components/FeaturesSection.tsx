@@ -52,7 +52,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="section-spacing reveal-animation bg-autojam-background-dark">
+    <section ref={sectionRef} className="section-spacing reveal-animation bg-black">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
