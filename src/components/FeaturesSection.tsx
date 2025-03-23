@@ -60,20 +60,20 @@ const FeaturesSection = () => {
                     <div className="h-1.5 bg-blue-300/20 rounded-full w-3/4"></div>
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <div className="flex items-center text-white space-x-2">
+                <div className="space-y-4">
+                  <div className="flex items-center text-white space-x-2 py-1">
                     <div className="w-1.5 h-1.5 rounded-full bg-blue-400"></div>
                     <div className="text-xs text-blue-300">Analyzing email content...</div>
                   </div>
-                  <div className="flex items-center text-white space-x-2">
+                  <div className="flex items-center text-white space-x-2 py-1">
                     <div className="w-1.5 h-1.5 rounded-full bg-green-400"></div>
                     <div className="text-xs text-green-300">Decision: Schedule meeting</div>
                   </div>
-                  <div className="flex items-center text-white space-x-2">
+                  <div className="flex items-center text-white space-x-2 py-1">
                     <div className="w-1.5 h-1.5 rounded-full bg-amber-400"></div>
                     <div className="text-xs text-amber-300">Action: Updated calendar</div>
                   </div>
-                  <div className="flex items-center text-white space-x-2">
+                  <div className="flex items-center text-white space-x-2 py-1">
                     <div className="w-1.5 h-1.5 rounded-full bg-purple-400"></div>
                     <div className="text-xs text-purple-300">Action: Drafted response email</div>
                   </div>
