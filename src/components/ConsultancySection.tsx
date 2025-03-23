@@ -1,40 +1,32 @@
-
 import React, { useEffect, useRef } from "react";
 import { Calendar, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Card } from "@/components/ui/card";
 import ScrollReveal from "./ScrollReveal";
-
 const ConsultancySection = () => {
   const sectionRef = useRef<HTMLElement>(null);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("revealed");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
-
-  return (
-    <section ref={sectionRef} className="section-spacing reveal-animation relative overflow-hidden bg-gradient-to-b from-white to-gray-50">
+  return <section ref={sectionRef} className="section-spacing reveal-animation relative overflow-hidden bg-gradient-to-b from-white to-gray-50 bg-autojam-background">
       {/* Background decorative elements */}
       <div className="absolute -top-64 -right-64 w-96 h-96 rounded-full bg-blue-100/50 blur-3xl"></div>
       <div className="absolute -bottom-32 -left-32 w-80 h-80 rounded-full bg-purple-100/50 blur-3xl"></div>
@@ -99,8 +91,6 @@ const ConsultancySection = () => {
           </div>
         </Card>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ConsultancySection;
