@@ -29,7 +29,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         {subtitle}
       </p>
       <p className="text-autojam-text-secondary mb-8 flex-grow">{description}</p>
-      <button className={cn("flex items-center text-sm font-medium group")}>
+      <button className={cn("flex items-center text-sm font-medium group px-4 py-2 rounded-lg bg-[#FAE5D1] text-black hover:shadow-md transition-all duration-300")}>
         <span>Read more</span>
         <ArrowRight
           className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
