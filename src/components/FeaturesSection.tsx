@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import FeatureCard from "./FeatureCard";
 import ScrollReveal from "./ScrollReveal";
 
@@ -46,9 +46,9 @@ const FeaturesSection = () => {
                   <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500"></div>
                 </div>
-                <div className="text-white text-xs ml-2">AI Agent</div>
+                <div className="text-white/70 text-xs ml-2">AI Agent</div>
               </div>
-              <div className="bg-gradient-to-br from-slate-800 to-slate-900 p-4 h-[210px]">
+              <div className="bg-[#1A1A1A] p-4">
                 <div className="flex space-x-4 mb-4">
                   <div className="w-12 h-12 rounded-full bg-blue-400/20 flex items-center justify-center">
                     <div className="w-8 h-8 rounded-full bg-blue-500/60 animate-pulse flex items-center justify-center">
@@ -101,10 +101,10 @@ const FeaturesSection = () => {
                 </div>
                 <div className="text-white/70 text-xs ml-2">Workflow Builder</div>
               </div>
-              <div className="bg-gradient-to-br from-slate-800 to-slate-900 p-4 h-[180px]">
+              <div className="bg-[#1A1A1A] p-4">
                 <div className="flex flex-col items-center">
-                  {/* Flow diagram */}
-                  <div className="flex items-center justify-center w-full mb-2">
+                  {/* Flow diagram with angular connections */}
+                  <div className="flex items-center justify-center w-full mb-3">
                     <div className="bg-emerald-500/20 rounded-lg p-2 text-emerald-300 text-xs font-medium">
                       New Customer
                     </div>
@@ -114,32 +114,41 @@ const FeaturesSection = () => {
                     </div>
                   </div>
                   
-                  <div className="h-10 w-px bg-gradient-to-b from-emerald-400/40 to-blue-400/40 relative">
-                    <div className="absolute left-1/2 -translate-x-1/2 top-1/3 w-3 h-3 rounded-full bg-blue-400/40 animate-pulse"></div>
+                  {/* Use right angle lines for connections */}
+                  <div className="relative h-14 w-px bg-blue-400/40">
+                    <div className="absolute top-1/2 left-0 h-px w-2 bg-blue-400/40"></div>
+                    <div className="absolute left-2 top-1/2 w-3 h-3 rounded-full bg-blue-400/40 animate-pulse"></div>
                   </div>
                   
-                  <div className="grid grid-cols-2 gap-3 w-full mt-1">
+                  <div className="grid grid-cols-2 gap-3 w-full mt-1 relative">
+                    {/* Connection from center to left node */}
+                    <div className="absolute top-0 left-1/4 w-px h-2 bg-blue-400/40"></div>
+                    {/* Connection from center to right node */}
+                    <div className="absolute top-0 right-1/4 w-px h-2 bg-purple-400/40"></div>
+                    
                     <div className="flex flex-col items-center">
-                      <div className="w-4 h-4 rounded-full border border-blue-400 flex items-center justify-center mb-1">
+                      <div className="w-4 h-4 rounded-full border border-blue-400 flex items-center justify-center mb-2">
                         <div className="w-2 h-2 rounded-full bg-blue-400"></div>
                       </div>
-                      <div className="bg-blue-500/20 rounded-lg p-1.5 text-blue-300 text-xs font-medium w-full text-center">
+                      <div className="bg-blue-500/20 rounded-lg p-2 text-blue-300 text-xs font-medium w-full text-center">
                         Update CRM
                       </div>
                     </div>
                     
                     <div className="flex flex-col items-center">
-                      <div className="w-4 h-4 rounded-full border border-purple-400 flex items-center justify-center mb-1">
+                      <div className="w-4 h-4 rounded-full border border-purple-400 flex items-center justify-center mb-2">
                         <div className="w-2 h-2 rounded-full bg-purple-400"></div>
                       </div>
-                      <div className="bg-purple-500/20 rounded-lg p-1.5 text-purple-300 text-xs font-medium w-full text-center">
+                      <div className="bg-purple-500/20 rounded-lg p-2 text-purple-300 text-xs font-medium w-full text-center">
                         Send Email
                       </div>
                     </div>
                   </div>
                   
-                  <div className="h-10 w-px bg-gradient-to-b from-blue-400/40 to-amber-400/40 relative mt-1">
-                    <div className="absolute left-1/2 -translate-x-1/2 top-2/3 w-3 h-3 rounded-full bg-amber-400/40 animate-pulse"></div>
+                  {/* Bottom connection with right angles */}
+                  <div className="relative h-14 w-px bg-amber-400/40 mt-1">
+                    <div className="absolute bottom-1/2 left-0 h-px w-2 bg-amber-400/40"></div>
+                    <div className="absolute left-2 bottom-1/2 w-3 h-3 rounded-full bg-amber-400/40 animate-pulse"></div>
                   </div>
                   
                   <div className="flex items-center justify-center w-full mt-1">
@@ -147,7 +156,7 @@ const FeaturesSection = () => {
                       <div className="w-2 h-2 rounded-full bg-amber-400"></div>
                     </div>
                     <div className="h-px w-8 bg-amber-400/40"></div>
-                    <div className="bg-amber-500/20 rounded-lg p-1.5 text-amber-300 text-xs font-medium">
+                    <div className="bg-amber-500/20 rounded-lg p-2 text-amber-300 text-xs font-medium">
                       Generate Invoice
                     </div>
                   </div>
@@ -175,7 +184,7 @@ const FeaturesSection = () => {
                 </div>
                 <div className="text-white/70 text-xs ml-2">Knowledge Bot</div>
               </div>
-              <div className="bg-gradient-to-br from-slate-800 to-slate-900 p-4 h-[180px]">
+              <div className="bg-[#1A1A1A] p-4">
                 <div className="space-y-3">
                   <div className="flex justify-end">
                     <div className="bg-blue-500/20 rounded-lg p-2 max-w-[80%]">
@@ -187,8 +196,8 @@ const FeaturesSection = () => {
                     <div className="bg-slate-700/50 rounded-lg p-3 max-w-[80%] relative">
                       <div className="absolute -left-2 top-0 w-10 h-10 rounded-full bg-gradient-to-br from-orange-300 to-pink-500 opacity-50 blur-md"></div>
                       <div className="relative">
-                        <p className="text-xs text-white mb-1.5">According to our company handbook:</p>
-                        <div className="bg-slate-800/70 rounded p-2 border-l-2 border-amber-400 mb-1.5">
+                        <p className="text-xs text-white mb-2">According to our company handbook:</p>
+                        <div className="bg-slate-800/70 rounded p-2 border-l-2 border-amber-400 mb-2">
                           <p className="text-xs text-amber-200 italic">"Full refunds available within 30 days of purchase with receipt."</p>
                         </div>
                         <div className="flex items-center space-x-1">
@@ -199,7 +208,7 @@ const FeaturesSection = () => {
                     </div>
                   </div>
                   
-                  <div className="flex items-center space-x-2 mt-2">
+                  <div className="flex items-center space-x-2 mt-3">
                     <div className="flex-1 h-px bg-slate-700/50"></div>
                     <div className="text-xs text-slate-500">Verified from 3 documents</div>
                     <div className="flex-1 h-px bg-slate-700/50"></div>
