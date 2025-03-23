@@ -20,7 +20,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 }) => {
   return (
     <div
-      className="bg-autojam-card dark:bg-autojam-card-dark rounded-xl p-8 flex flex-col h-full card-hover animate-scale-in"
+      className="bg-autojam-card dark:bg-autojam-card-dark rounded-xl p-8 flex flex-col h-full card-hover animate-scale-in shadow-[0_10px_30px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5)]"
       style={{ animationDelay: `${delay}ms` }}
     >
       <div className="mb-6">{icon}</div>
