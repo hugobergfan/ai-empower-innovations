@@ -65,11 +65,16 @@ export default {
         },
         autojam: {
           background: "#F9FAFA",
+          "background-dark": "#1A1F2C",
           card: "#FFFFFF",
+          "card-dark": "#222222",
           text: {
             primary: "#000000",
+            "primary-dark": "#FFFFFF",
             secondary: "#555555",
+            "secondary-dark": "#AAAAAA",
             muted: "#888888",
+            "muted-dark": "#666666",
           },
         },
       },

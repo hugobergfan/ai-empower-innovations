@@ -35,24 +35,24 @@ const FeaturesSection = () => {
       title: "AI Agents",
       subtitle: "Autonomous agent making decisions and taking action on your behalf",
       description: "The most powerful form of AI. Our agents connect to your platforms and databases, allowing them to make autonomous decisions and take actions unprompted. For example our agents can read, analyse and reply to emails and autonomously schedule meetings, create tickets, delegate work and take action. Your 24/7 employee.",
-      icon: <Brain className="w-10 h-10 text-black" />,
+      icon: <Brain className="w-10 h-10 text-black dark:text-white" />,
     },
     {
       title: "Automated Workflows",
       subtitle: "AI-powered backend handling data processes and workflows",
       description: "Automate your manual processes with AI powered automations. Decide a trigger and result e.g. when a new customer is added, update CRM, send an email and draft an invoice. AI enables automating workflows without predetermined variables, allowing anything to be automated.",
-      icon: <Workflow className="w-10 h-10 text-black" />,
+      icon: <Workflow className="w-10 h-10 text-black dark:text-white" />,
     },
     {
       title: "Internal Knowledge Chat-bots",
       subtitle: "Chat-bot that answers question from your docs, ensuring accuracy",
       description: "Train your own chatbot on internal documentation and domain specific knowledge. Our chat-bots answers based on real facts and documentation, with referrals to the sources, eliminating hallucinations and creating trustworthy replies.",
-      icon: <MessageSquare className="w-10 h-10 text-black" />,
+      icon: <MessageSquare className="w-10 h-10 text-black dark:text-white" />,
     },
   ];
 
   return (
-    <section ref={sectionRef} className="section-spacing reveal-animation">
+    <section ref={sectionRef} className="section-spacing reveal-animation bg-autojam-background dark:bg-autojam-background-dark">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
