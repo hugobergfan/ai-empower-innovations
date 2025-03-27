@@ -151,47 +151,64 @@ const FeaturesSection = () => {
     graphic: <div className="relative">
           <div className="absolute -z-10 inset-0 bg-gradient-to-tr from-amber-100 to-rose-100 rounded-full blur-3xl opacity-60"></div>
           <div className="relative z-10 p-4">
-            <div className="bg-white/10 backdrop-blur-md shadow-xl rounded-2xl overflow-hidden border border-white/20">
-              <div className="bg-zinc-900 p-2 flex items-center space-x-2">
-                <div className="flex items-center space-x-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-                </div>
-                <div className="text-white text-xs ml-2">Knowledge Bot</div>
-              </div>
-              <div className="bg-gradient-to-br from-slate-800 to-slate-900 p-3">
-                <div className="space-y-2">
-                  <div className="flex justify-end">
-                    <div className="bg-blue-500/20 rounded-lg p-1.5 max-w-[80%]">
-                      <p className="text-xs text-white">What's our refund policy?</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex">
-                    <div className="bg-slate-700/50 rounded-lg p-2 max-w-[80%] relative">
-                      <div className="absolute -left-2 top-0 w-8 h-8 rounded-full bg-gradient-to-br from-orange-300 to-pink-500 opacity-50 blur-md"></div>
-                      <div className="relative">
-                        <p className="text-xs text-white mb-1.5">According to our company handbook:</p>
-                        <div className="bg-slate-800/70 rounded p-1.5 border-l-2 border-amber-400 mb-1.5">
-                          <p className="text-xs text-amber-200 italic">"Full refunds available within 30 days of purchase with receipt."</p>
-                        </div>
-                        <div className="flex items-center space-x-1">
-                          <div className="w-2 h-2 rounded-full bg-emerald-500/70"></div>
-                          <p className="text-xs text-emerald-300">Source: company-handbook.pdf, page 24</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-2 mt-2">
-                    <div className="flex-1 h-px bg-slate-700/50"></div>
-                    <div className="text-xs text-slate-500">Verified from 3 documents</div>
-                    <div className="flex-1 h-px bg-slate-700/50"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="300" height="140" fill="none" className="mx-auto w-full h-auto">
+              <g>
+                <g transform="translate(128 8)">
+                  <path d="M40 20C40 8.954 31.046 0 20 0C8.954 0 0 8.954 0 20C0 31.046 8.954 40 20 40C31.046 40 40 31.046 40 20Z" fill="white" stroke="#f0f0f0" strokeWidth="1"/>
+                  <path d="M22 10H18V14H22V10ZM22 16H18V26H22V16Z" fill="#000" />
+                </g>
+                <g transform="translate(20 40)">
+                  <path d="M40 20C40 8.954 31.046 0 20 0C8.954 0 0 8.954 0 20C0 31.046 8.954 40 20 40C31.046 40 40 31.046 40 20Z" fill="white" stroke="#f0f0f0" strokeWidth="1"/>
+                  <path d="M25 17.5C25 15.29 23.21 13.5 21 13.5H12V17.5H21V21.5H17V25.5H21C23.21 25.5 25 23.71 25 21.5V17.5Z" fill="#000" />
+                </g>
+                <g transform="translate(210 60)">
+                  <path d="M40 20C40 8.954 31.046 0 20 0C8.954 0 0 8.954 0 20C0 31.046 8.954 40 20 40C31.046 40 40 31.046 40 20Z" fill="white" stroke="#f0f0f0" strokeWidth="1"/>
+                  <path d="M28 12L12 28M12 12L28 28" stroke="#000" strokeWidth="2"/>
+                </g>
+                
+                <defs>
+                  <linearGradient id="knowbot1" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stopColor="rgba(0, 79, 128, 0.8)" />
+                    <stop offset="1" stopColor="rgba(0, 79, 128, 0.2)" />
+                  </linearGradient>
+                  <linearGradient id="knowbot2" x1="1" y1="0" x2="0" y2="1">
+                    <stop offset="0" stopColor="rgba(0, 79, 128, 0.7)" />
+                    <stop offset="1" stopColor="rgba(0, 79, 128, 0.1)" />
+                  </linearGradient>
+                </defs>
+                
+                {/* Document representations */}
+                <rect x="30" y="85" width="70" height="10" rx="2" fill="#e2e8f0" />
+                <rect x="30" y="100" width="50" height="10" rx="2" fill="#e2e8f0" />
+                <rect x="30" y="115" width="60" height="10" rx="2" fill="#e2e8f0" />
+                
+                <rect x="200" y="15" width="70" height="10" rx="2" fill="#e2e8f0" />
+                <rect x="200" y="30" width="50" height="10" rx="2" fill="#e2e8f0" />
+                <rect x="200" y="45" width="40" height="10" rx="2" fill="#e2e8f0" />
+                
+                {/* Connection lines */}
+                <path d="M60 40L100 25" stroke="url(#knowbot1)" strokeWidth="1.5" />
+                <path d="M60 100L110 85" stroke="url(#knowbot1)" strokeWidth="1.5" />
+                <path d="M150 30L190 40" stroke="url(#knowbot2)" strokeWidth="1.5" />
+                <path d="M160 60L200 70" stroke="url(#knowbot2)" strokeWidth="1.5" />
+                
+                {/* Main chat bubble */}
+                <rect x="90" y="50" width="120" height="80" rx="10" fill="white" stroke="#e2e8f0" strokeWidth="2" />
+                <rect x="100" y="60" width="100" height="10" rx="2" fill="#f0f0f0" />
+                <rect x="100" y="75" width="80" height="10" rx="2" fill="#f0f0f0" />
+                <rect x="100" y="90" width="90" height="10" rx="2" fill="#f0f0f0" />
+                <rect x="100" y="105" width="70" height="10" rx="2" fill="#f0f0f0" />
+                
+                {/* Decorative elements */}
+                <circle cx="150" cy="20" r="3" fill="rgba(0, 79, 128, 0.7)" />
+                <circle cx="40" cy="120" r="2" fill="rgba(0, 79, 128, 0.7)" />
+                <circle cx="220" cy="110" r="4" fill="rgba(0, 79, 128, 0.7)" />
+                
+                {/* Knowledge connection highlights */}
+                <path d="M130 50L130 30" stroke="rgba(0, 79, 128, 0.4)" strokeWidth="1" strokeDasharray="2 2" />
+                <path d="M170 100L220 95" stroke="rgba(0, 79, 128, 0.4)" strokeWidth="1" strokeDasharray="2 2" />
+              </g>
+            </svg>
           </div>
         </div>
   }];
