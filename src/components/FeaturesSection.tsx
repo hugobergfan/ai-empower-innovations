@@ -152,69 +152,49 @@ const FeaturesSection = () => {
           <div className="absolute -z-10 inset-0 bg-gradient-to-tr from-amber-100 to-rose-100 rounded-full blur-3xl opacity-60"></div>
           <div className="relative z-10 p-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="300" height="140" fill="none" className="mx-auto w-full h-auto">
-              <defs>
-                <linearGradient id="flowLine1" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0" stopColor="rgba(0, 79, 128, 0.9)" />
-                  <stop offset="1" stopColor="rgba(0, 79, 128, 0.4)" />
-                </linearGradient>
-                <linearGradient id="flowLine2" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0" stopColor="rgba(0, 79, 128, 0.8)" />
-                  <stop offset="1" stopColor="rgba(0, 79, 128, 0.3)" />
-                </linearGradient>
-                <linearGradient id="nodeFill1" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stopColor="#FFFFFF" />
-                  <stop offset="1" stopColor="#F8F8F8" />
-                </linearGradient>
-              </defs>
-              
-              {/* Background elements */}
-              <rect x="20" y="10" width="260" height="120" rx="10" fill="transparent" stroke="#f0f0f0" strokeWidth="1" strokeDasharray="4 2" />
-              
-              {/* Flow nodes */}
               <g>
-                {/* Start node */}
-                <circle cx="70" cy="40" r="18" fill="url(#nodeFill1)" stroke="rgba(0, 79, 128, 0.8)" strokeWidth="1.5" />
-                <text x="70" y="44" textAnchor="middle" fontSize="12" fill="#333">Start</text>
+                {/* Main container outlines */}
+                <rect x="10" y="10" width="280" height="120" rx="10" fill="transparent" stroke-width="0.987805" stroke="rgb(228,228,231)" stroke-miterlimit="10" />
                 
-                {/* Process node 1 */}
-                <rect x="130" y="22" width="70" height="36" rx="4" fill="url(#nodeFill1)" stroke="rgba(0, 79, 128, 0.8)" strokeWidth="1.5" />
-                <text x="165" y="44" textAnchor="middle" fontSize="12" fill="#333">Process</text>
+                {/* Node 1 - Start */}
+                <circle cx="50" cy="40" r="15" fill="white" stroke-width="0.987805" stroke="rgb(0, 79, 128)" stroke-miterlimit="10" />
                 
-                {/* Decision node */}
-                <path d="M70 85 L90 105 L70 125 L50 105 Z" fill="url(#nodeFill1)" stroke="rgba(0, 79, 128, 0.8)" strokeWidth="1.5" />
-                <text x="70" y="109" textAnchor="middle" fontSize="10" fill="#333">Decision</text>
+                {/* Node 2 - Process */}
+                <rect x="120" y="25" width="60" height="30" rx="5" fill="white" stroke-width="0.987805" stroke="rgb(0, 79, 128)" stroke-miterlimit="10" />
                 
-                {/* Output node 1 */}
-                <rect x="130" y="87" width="70" height="36" rx="4" fill="url(#nodeFill1)" stroke="rgba(0, 79, 128, 0.8)" strokeWidth="1.5" />
-                <text x="165" y="109" textAnchor="middle" fontSize="12" fill="#333">Output</text>
+                {/* Node 3 - Decision */}
+                <path d="M50 85 L65 100 L50 115 L35 100 Z" fill="white" stroke-width="0.987805" stroke="rgb(0, 79, 128)" stroke-miterlimit="10" />
                 
-                {/* End node */}
-                <circle cx="240" cy="105" r="18" fill="url(#nodeFill1)" stroke="rgba(0, 79, 128, 0.8)" strokeWidth="1.5" />
-                <text x="240" y="109" textAnchor="middle" fontSize="12" fill="#333">End</text>
+                {/* Node 4 - Process 2 */}
+                <rect x="120" y="85" width="60" height="30" rx="5" fill="white" stroke-width="0.987805" stroke="rgb(0, 79, 128)" stroke-miterlimit="10" />
                 
-                {/* Connection lines */}
-                <path d="M88 40 L130 40" stroke="url(#flowLine1)" strokeWidth="2" markerEnd="url(#arrowHead)" />
-                <path d="M200 40 L240 40 L240 87" stroke="url(#flowLine1)" strokeWidth="2" markerEnd="url(#arrowHead)" />
-                <path d="M70 58 L70 85" stroke="url(#flowLine2)" strokeWidth="2" markerEnd="url(#arrowHead)" />
-                <path d="M90 105 L130 105" stroke="url(#flowLine2)" strokeWidth="2" markerEnd="url(#arrowHead)" />
-                <path d="M200 105 L222 105" stroke="url(#flowLine2)" strokeWidth="2" markerEnd="url(#arrowHead)" />
+                {/* Node 5 - End */}
+                <circle cx="240" cy="100" r="15" fill="white" stroke-width="0.987805" stroke="rgb(0, 79, 128)" stroke-miterlimit="10" />
                 
-                {/* Arrow markers */}
-                <defs>
-                  <marker id="arrowHead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                    <polygon points="0 0, 10 3.5, 0 7" fill="rgba(0, 79, 128, 0.8)" />
-                  </marker>
-                </defs>
+                {/* Flow Lines */}
+                <g>
+                  <defs>
+                    <linearGradient id="flowGradient1" x1="0" x2="1" y1="0.5" y2="0.5">
+                      <stop offset="0" stop-color="rgba(230, 230, 232, 0.38)" stop-opacity="0.38"></stop>
+                      <stop offset="1" stop-color="rgba(0, 79, 128, 0.61)" stop-opacity="0.61"></stop>
+                    </linearGradient>
+                  </defs>
+                  <path d="M65 40 L120 40" stroke="url(#flowGradient1)" stroke-width="2" />
+                  <path d="M180 40 L240 40 L240 85" stroke="url(#flowGradient1)" stroke-width="2" />
+                  <path d="M50 55 L50 85" stroke="url(#flowGradient1)" stroke-width="2" />
+                  <path d="M65 100 L120 100" stroke="url(#flowGradient1)" stroke-width="2" />
+                  <path d="M180 100 L225 100" stroke="url(#flowGradient1)" stroke-width="2" />
+                </g>
                 
-                {/* Small decorative elements */}
-                <circle cx="165" cy="15" r="3" fill="rgba(0, 79, 128, 0.5)" />
-                <circle cx="240" cy="70" r="2" fill="rgba(0, 79, 128, 0.5)" />
-                <circle cx="50" cy="70" r="2" fill="rgba(0, 79, 128, 0.5)" />
-                <rect x="125" y="70" width="4" height="4" fill="rgba(0, 79, 128, 0.5)" />
-                <rect x="205" y="70" width="4" height="4" fill="rgba(0, 79, 128, 0.5)" />
+                {/* Decorative elements */}
+                <circle cx="200" cy="20" r="5" fill="rgba(0, 79, 128, 0.2)" />
+                <circle cx="20" cy="70" r="3" fill="rgba(0, 79, 128, 0.2)" />
+                <circle cx="270" cy="70" r="3" fill="rgba(0, 79, 128, 0.2)" />
+                <rect x="100" cy="70" width="5" height="5" fill="rgba(0, 79, 128, 0.2)" />
                 
-                {/* Dotted connection for document flow */}
-                <path d="M110 65 C130 75, 150 75, 170 65" stroke="rgba(0, 79, 128, 0.4)" strokeWidth="1" strokeDasharray="3 2" />
+                {/* Accent shapes */}
+                <path d="M280 20 L290 10 L300 20 L290 30 Z" fill="rgb(0, 79, 128)" />
+                <path d="M10 120 L20 110 L30 120 L20 130 Z" fill="rgb(0, 79, 128)" />
               </g>
             </svg>
           </div>
