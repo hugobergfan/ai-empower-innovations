@@ -1,6 +1,9 @@
+
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 interface FeatureCardProps {
   title: string;
   subtitle: string;
@@ -8,6 +11,7 @@ interface FeatureCardProps {
   graphic: React.ReactNode;
   delay?: number;
 }
+
 const FeatureCard: React.FC<FeatureCardProps> = ({
   title,
   subtitle,
@@ -15,10 +19,20 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   graphic,
   delay = 0
 }) => {
-  return <div className="bg-autojam-card dark:bg-autojam-card-dark rounded-xl p-6 flex flex-col h-full card-hover animate-scale-in shadow-[0_10px_30px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5)]" style={{
-    animationDelay: `${delay}ms`
-  }}>
-      <div className="mb-5 -mx-2">{graphic}</div>
+  return (
+    <div 
+      className="bg-autojam-card dark:bg-autojam-card-dark rounded-xl p-6 flex flex-col h-full card-hover animate-scale-in shadow-[0_10px_30px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5)]" 
+      style={{
+        animationDelay: `${delay}ms`
+      }}
+    >
+      <div className="mb-5 -mx-2 flex justify-center items-center">
+        <div className="w-full max-w-full">
+          <AspectRatio ratio={16/9} className="flex items-center justify-center">
+            {graphic}
+          </AspectRatio>
+        </div>
+      </div>
       <h3 className="text-xl font-bold mb-2 dark:text-white">{title}</h3>
       <p className="text-sm text-autojam-text-secondary dark:text-autojam-text-secondary-dark mb-3 font-bold">
         {subtitle}
@@ -30,6 +44,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" size={16} />
         </button>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default FeatureCard;
