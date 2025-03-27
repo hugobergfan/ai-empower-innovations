@@ -152,61 +152,69 @@ const FeaturesSection = () => {
           <div className="absolute -z-10 inset-0 bg-gradient-to-tr from-amber-100 to-rose-100 rounded-full blur-3xl opacity-60"></div>
           <div className="relative z-10 p-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="300" height="140" fill="none" className="mx-auto w-full h-auto">
+              <defs>
+                <linearGradient id="flowLine1" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stopColor="rgba(0, 79, 128, 0.9)" />
+                  <stop offset="1" stopColor="rgba(0, 79, 128, 0.4)" />
+                </linearGradient>
+                <linearGradient id="flowLine2" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stopColor="rgba(0, 79, 128, 0.8)" />
+                  <stop offset="1" stopColor="rgba(0, 79, 128, 0.3)" />
+                </linearGradient>
+                <linearGradient id="nodeFill1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stopColor="#FFFFFF" />
+                  <stop offset="1" stopColor="#F8F8F8" />
+                </linearGradient>
+              </defs>
+              
+              {/* Background elements */}
+              <rect x="20" y="10" width="260" height="120" rx="10" fill="transparent" stroke="#f0f0f0" strokeWidth="1" strokeDasharray="4 2" />
+              
+              {/* Flow nodes */}
               <g>
-                <g transform="translate(128 8)">
-                  <path d="M40 20C40 8.954 31.046 0 20 0C8.954 0 0 8.954 0 20C0 31.046 8.954 40 20 40C31.046 40 40 31.046 40 20Z" fill="white" stroke="#f0f0f0" strokeWidth="1"/>
-                  <path d="M22 10H18V14H22V10ZM22 16H18V26H22V16Z" fill="#000" />
-                </g>
-                <g transform="translate(20 40)">
-                  <path d="M40 20C40 8.954 31.046 0 20 0C8.954 0 0 8.954 0 20C0 31.046 8.954 40 20 40C31.046 40 40 31.046 40 20Z" fill="white" stroke="#f0f0f0" strokeWidth="1"/>
-                  <path d="M25 17.5C25 15.29 23.21 13.5 21 13.5H12V17.5H21V21.5H17V25.5H21C23.21 25.5 25 23.71 25 21.5V17.5Z" fill="#000" />
-                </g>
-                <g transform="translate(210 60)">
-                  <path d="M40 20C40 8.954 31.046 0 20 0C8.954 0 0 8.954 0 20C0 31.046 8.954 40 20 40C31.046 40 40 31.046 40 20Z" fill="white" stroke="#f0f0f0" strokeWidth="1"/>
-                  <path d="M28 12L12 28M12 12L28 28" stroke="#000" strokeWidth="2"/>
-                </g>
+                {/* Start node */}
+                <circle cx="70" cy="40" r="18" fill="url(#nodeFill1)" stroke="rgba(0, 79, 128, 0.8)" strokeWidth="1.5" />
+                <text x="70" y="44" textAnchor="middle" fontSize="12" fill="#333">Start</text>
                 
-                <defs>
-                  <linearGradient id="knowbot1" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stopColor="rgba(0, 79, 128, 0.8)" />
-                    <stop offset="1" stopColor="rgba(0, 79, 128, 0.2)" />
-                  </linearGradient>
-                  <linearGradient id="knowbot2" x1="1" y1="0" x2="0" y2="1">
-                    <stop offset="0" stopColor="rgba(0, 79, 128, 0.7)" />
-                    <stop offset="1" stopColor="rgba(0, 79, 128, 0.1)" />
-                  </linearGradient>
-                </defs>
+                {/* Process node 1 */}
+                <rect x="130" y="22" width="70" height="36" rx="4" fill="url(#nodeFill1)" stroke="rgba(0, 79, 128, 0.8)" strokeWidth="1.5" />
+                <text x="165" y="44" textAnchor="middle" fontSize="12" fill="#333">Process</text>
                 
-                {/* Document representations */}
-                <rect x="30" y="85" width="70" height="10" rx="2" fill="#e2e8f0" />
-                <rect x="30" y="100" width="50" height="10" rx="2" fill="#e2e8f0" />
-                <rect x="30" y="115" width="60" height="10" rx="2" fill="#e2e8f0" />
+                {/* Decision node */}
+                <path d="M70 85 L90 105 L70 125 L50 105 Z" fill="url(#nodeFill1)" stroke="rgba(0, 79, 128, 0.8)" strokeWidth="1.5" />
+                <text x="70" y="109" textAnchor="middle" fontSize="10" fill="#333">Decision</text>
                 
-                <rect x="200" y="15" width="70" height="10" rx="2" fill="#e2e8f0" />
-                <rect x="200" y="30" width="50" height="10" rx="2" fill="#e2e8f0" />
-                <rect x="200" y="45" width="40" height="10" rx="2" fill="#e2e8f0" />
+                {/* Output node 1 */}
+                <rect x="130" y="87" width="70" height="36" rx="4" fill="url(#nodeFill1)" stroke="rgba(0, 79, 128, 0.8)" strokeWidth="1.5" />
+                <text x="165" y="109" textAnchor="middle" fontSize="12" fill="#333">Output</text>
+                
+                {/* End node */}
+                <circle cx="240" cy="105" r="18" fill="url(#nodeFill1)" stroke="rgba(0, 79, 128, 0.8)" strokeWidth="1.5" />
+                <text x="240" y="109" textAnchor="middle" fontSize="12" fill="#333">End</text>
                 
                 {/* Connection lines */}
-                <path d="M60 40L100 25" stroke="url(#knowbot1)" strokeWidth="1.5" />
-                <path d="M60 100L110 85" stroke="url(#knowbot1)" strokeWidth="1.5" />
-                <path d="M150 30L190 40" stroke="url(#knowbot2)" strokeWidth="1.5" />
-                <path d="M160 60L200 70" stroke="url(#knowbot2)" strokeWidth="1.5" />
+                <path d="M88 40 L130 40" stroke="url(#flowLine1)" strokeWidth="2" markerEnd="url(#arrowHead)" />
+                <path d="M200 40 L240 40 L240 87" stroke="url(#flowLine1)" strokeWidth="2" markerEnd="url(#arrowHead)" />
+                <path d="M70 58 L70 85" stroke="url(#flowLine2)" strokeWidth="2" markerEnd="url(#arrowHead)" />
+                <path d="M90 105 L130 105" stroke="url(#flowLine2)" strokeWidth="2" markerEnd="url(#arrowHead)" />
+                <path d="M200 105 L222 105" stroke="url(#flowLine2)" strokeWidth="2" markerEnd="url(#arrowHead)" />
                 
-                {/* Main chat bubble */}
-                <rect x="90" y="50" width="120" height="80" rx="10" fill="white" stroke="#e2e8f0" strokeWidth="2" />
-                <rect x="100" y="60" width="100" height="10" rx="2" fill="#f0f0f0" />
-                <rect x="100" y="75" width="80" height="10" rx="2" fill="#f0f0f0" />
-                <rect x="100" y="90" width="90" height="10" rx="2" fill="#f0f0f0" />
-                <rect x="100" y="105" width="70" height="10" rx="2" fill="#f0f0f0" />
+                {/* Arrow markers */}
+                <defs>
+                  <marker id="arrowHead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="rgba(0, 79, 128, 0.8)" />
+                  </marker>
+                </defs>
                 
-                {/* Decorative elements */}
-                <circle cx="150" cy="20" r="3" fill="rgba(0, 79, 128, 0.7)" />
-                <circle cx="40" cy="120" r="2" fill="rgba(0, 79, 128, 0.7)" />
-                <circle cx="220" cy="110" r="4" fill="rgba(0, 79, 128, 0.7)" />
+                {/* Small decorative elements */}
+                <circle cx="165" cy="15" r="3" fill="rgba(0, 79, 128, 0.5)" />
+                <circle cx="240" cy="70" r="2" fill="rgba(0, 79, 128, 0.5)" />
+                <circle cx="50" cy="70" r="2" fill="rgba(0, 79, 128, 0.5)" />
+                <rect x="125" y="70" width="4" height="4" fill="rgba(0, 79, 128, 0.5)" />
+                <rect x="205" y="70" width="4" height="4" fill="rgba(0, 79, 128, 0.5)" />
                 
-                {/* Knowledge connection highlights */}
-                <path d="M130 50L130 30" stroke="rgba(0, 79, 128, 0.4)" strokeWidth="1" strokeDasharray="2 2" />
-                <path d="M170 100L220 95" stroke="rgba(0, 79, 128, 0.4)" strokeWidth="1" strokeDasharray="2 2" />
+                {/* Dotted connection for document flow */}
+                <path d="M110 65 C130 75, 150 75, 170 65" stroke="rgba(0, 79, 128, 0.4)" strokeWidth="1" strokeDasharray="3 2" />
               </g>
             </svg>
           </div>
